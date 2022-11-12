@@ -26,7 +26,9 @@
                     <input type="text" placeholder="Umur Anda"
                         class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                 </div>
-                <button href="" class="transition duration-200 bg-blue-500 hover:bg-blue-600 text-white py-2.5 rounded-lg text-sm shadow-sm font-semibold">Mulai Konsultasi</button>
+                <button href=""
+                    class="transition duration-200 bg-blue-500 hover:bg-blue-600 text-white py-2.5 rounded-lg text-sm shadow-sm font-semibold">Mulai
+                    Konsultasi</button>
             </div>
         </form>
     </div>
@@ -36,9 +38,5 @@
         </div>
     </footer>
 </body>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
 </html>

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\PenyakitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +26,13 @@ Route::get('/login', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/admin/symptom', function () {
-    return view('admin.symptom');
-});
+// Route::get('/gejala', function () {
+//     return view('gejala');
+// });
 Route::get('/konsultasi', function () {
     return view('konsultasi');
 });
+
+Route::get('konsultasi-form', [KonsultasiController::class, 'index']);
+Route::get('gejala', [GejalaController::class, 'index']);
+Route::get('penyakit', [PenyakitController::class, 'index']);

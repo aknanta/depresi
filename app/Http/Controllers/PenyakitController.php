@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gejala;
+use App\Models\Penyakit;
 use Illuminate\Http\Request;
 
-class GejalaController extends Controller
+class PenyakitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        $gejala = Gejala::all();
-        return view('admin.gejala', compact('gejala'));
+        $penyakit = Penyakit::all();
+        return view('penyakit', compact('penyakit'));
     }
 
     /**
@@ -42,10 +42,10 @@ class GejalaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Penyakit $penyakit)
     {
         //
     }
@@ -53,10 +53,10 @@ class GejalaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Penyakit $penyakit)
     {
         //
     }
@@ -65,10 +65,10 @@ class GejalaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Penyakit $penyakit)
     {
         //
     }
@@ -76,10 +76,10 @@ class GejalaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Penyakit $penyakit)
     {
         //
     }

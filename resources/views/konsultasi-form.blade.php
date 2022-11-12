@@ -16,7 +16,12 @@
                 <p>Halo</p>
             </div> --}}
             <div class="h-screen border shadow">
-
+                @foreach ($gejala as $g)
+                <div class="flex mx-3">
+                    <input type="checkbox" name="" id="" value="{{ $g->kode_gejala }}">
+                    <p class="p-2">{{ $g->nama_gejala }}</p>
+                </div>
+                @endforeach
                 <button href="" class="transition duration-200 bg-blue-500 hover:bg-blue-600 text-white py-2.5 rounded-lg text-sm shadow-sm font-semibold">Mulai Konsultasi</button>
             </div>
         </form>
@@ -27,9 +32,5 @@
         </div>
     </footer>
 </body>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
 </html>

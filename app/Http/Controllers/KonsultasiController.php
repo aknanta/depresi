@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gejala;
 use Illuminate\Http\Request;
 
-class GejalaController extends Controller
+class KonsultasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class GejalaController extends Controller
     public function index()
     {
         $gejala = Gejala::all();
-        return view('admin.gejala', compact('gejala'));
+        return view('konsultasi-form', compact('gejala'));
     }
 
     /**

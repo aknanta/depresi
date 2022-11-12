@@ -14,8 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
-            GejalaSeeder::class
+        $this->call([
+            GejalaSeeder::class,
+            PenyakitSeeder::class
+        ]
         );
         // \App\Models\User::factory(10)->create();
     }
