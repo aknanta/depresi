@@ -26,7 +26,12 @@
             <div class="flex items-center space-x-3">
 
                 <!-- Search Button with Modal -->
-
+                <div class="">
+                    <form action="{{ URL::to('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">Logout</button>
+                    </form>
+                </div>
 
                 <!-- Notifications button -->
 

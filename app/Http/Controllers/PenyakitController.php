@@ -15,7 +15,7 @@ class PenyakitController extends Controller
     public function index()
     {
         $penyakit = Penyakit::all();
-        return view('penyakit', compact('penyakit'));
+        return view('admin.penyakit', compact('penyakit'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PenyakitController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah-penyakit');
     }
 
     /**
@@ -36,7 +36,17 @@ class PenyakitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_penyakit' => 'required',
+            'nama_penyakit' => 'required',
+            'solusi' => 'required',
+        ]);
+        $penyakit = new Penyakit();
+        $penyakit->kode_penyakit = $request->kode_penyakit;
+        $penyakit->nama_penyakit = $request->nama_penyakit;
+        $penyakit->solusi = $request->solusi;
+        $penyakit->save();
+        return redirect()->to('admin/penyakit');
     }
 
     /**
@@ -56,9 +66,10 @@ class PenyakitController extends Controller
      * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Penyakit $penyakit)
+    public function edit($id)
     {
-        //
+        $penyakit = Penyakit::findOrFail($id);
+        return view('admin.edit-penyakit', compact('penyakit'));
     }
 
     /**
@@ -68,9 +79,20 @@ class PenyakitController extends Controller
      * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Penyakit $penyakit)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kode_penyakit' => 'required',
+            'nama_penyakit' => 'required',
+            'solusi' => 'required',
+        ]);
+
+        $penyakit = Penyakit::findOrFail($id);
+        $penyakit->kode_penyakit = $request->kode_penyakit;
+        $penyakit->nama_penyakit = $request->nama_penyakit;
+        $penyakit->solusi = $request->solusi;
+        $penyakit->save();
+        return redirect()->to('admin/penyakit');
     }
 
     /**
@@ -79,8 +101,10 @@ class PenyakitController extends Controller
      * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penyakit $penyakit)
+    public function destroy($id)
     {
-        //
+       $penyakit = Penyakit::findOrFail($id);
+       $penyakit->delete();
+       return redirect()->to('admin/penyakit');
     }
 }

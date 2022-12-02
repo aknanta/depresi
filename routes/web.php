@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\RulesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,19 +24,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-// Route::get('/gejala', function () {
-//     return view('gejala');
-// });
-Route::get('/konsultasi', function () {
-    return view('konsultasi');
+
+
+Route::get('about', function(){
+    return view('about');
 });
 
 Route::get('konsultasi-form', [KonsultasiController::class, 'index']);
-Route::get('gejala', [GejalaController::class, 'index']);
-Route::get('penyakit', [PenyakitController::class, 'index']);
+Route::post('konsultasi-form/proses', [KonsultasiController::class, 'proses']);
+Route::get('konsultasi-form/{data_diagnosa}', [KonsultasiController::class, 'showdata']);
+Route::get('login', [LoginController::class, 'login']);
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('admin', [AdminController::class, 'index'])->name('index');
+    Route::get('admin/rules', [RulesController::class, 'index']);
+    Route::get('admin/pasien', [PasienController::class, 'index']);
+    Route::resource('admin/gejala', GejalaController::class);
+    Route::resource('admin/penyakit', PenyakitController::class);
+    Route::post('logout', [LoginController::class, 'logout']);
+});

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gejala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GejalaController extends Controller
 {
@@ -14,8 +15,9 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        $gejala = Gejala::all();
-        return view('admin.gejala', compact('gejala'));
+        return view('admin.gejala', [
+            'gejala' => DB::table('gejalas')->paginate('15')
+        ]);
     }
 
     /**
@@ -25,7 +27,7 @@ class GejalaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah-gejala');
     }
 
     /**
@@ -36,7 +38,15 @@ class GejalaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_gejala' => 'required',
+            'nama_gejala' => 'required'
+        ]);
+        $gejala = new Gejala;
+        $gejala->kode_gejala = $request->kode_gejala;
+        $gejala->nama_gejala = $request->nama_gejala;
+        $gejala->save();
+        return redirect()->to('/admin/gejala');
     }
 
     /**
@@ -58,7 +68,8 @@ class GejalaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gejala = Gejala::findOrFail($id);
+        return view('admin.edit-gejala', compact('gejala'));
     }
 
     /**
@@ -70,7 +81,16 @@ class GejalaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kode_gejala' => 'required',
+            'nama_gejala' => 'required'
+        ]);
+
+        $gejala = Gejala::findOrFail($id);
+        $gejala->kode_gejala = $request->kode_gejala;
+        $gejala->nama_gejala = $request->nama_gejala;
+        $gejala->save();
+        return redirect()->to('/admin/gejala');
     }
 
     /**
@@ -81,6 +101,8 @@ class GejalaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gejala = Gejala::findOrFail($id);
+        $gejala->delete();
+        return redirect()->to('/admin/gejala/');
     }
 }

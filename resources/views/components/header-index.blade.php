@@ -23,9 +23,9 @@
                     <div class="space-y-5 mt-4 lg:mt-0 lg:space-y-0 lg:space-x-16 lg:flex lg:place-items-center hidden">
                         <a class="text-base text-black select-none hover:text-white font-semibold cursor-pointer" href="{{ '/' }}">
                             Home</a>
-                        <a class="text-base text-black select-none hover:text-white font-semibold cursor-pointer">
+                        <a class="text-base text-black select-none hover:text-white font-semibold cursor-pointer" href="{{ 'about' }}">
                             About</a>
-                        <a class="text-base text-black select-none hover:text-white font-semibold cursor-pointer" href="{{ '/konsultasi' }}">
+                        <a class="text-base text-black select-none hover:text-white font-semibold cursor-pointer" href="{{ '/konsultasi-form' }}">
                             Services</a>
                     </div>
                     <div class="hidden lg:block mt-5 lg:mt-0">

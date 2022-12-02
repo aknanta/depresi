@@ -17,6 +17,7 @@ class CreatePenyakitsTable extends Migration
             $table->increments('id');
             $table->string('kode_penyakit');
             $table->string('nama_penyakit');
+            $table->string('solusi');
         });
     }
 

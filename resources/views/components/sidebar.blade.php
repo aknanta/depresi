@@ -64,12 +64,12 @@
                                     <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
                                         href="{{ '/admin' }}">
                                         <span
-                                            class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Main</span>
+                                            class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Dashboard</span>
                                     </a>
                                 </li>
                                 <li class="mb-1 last:mb-0">
                                     <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
-                                        href="{{ '/gejala' }}">
+                                        href="{{ '/admin/gejala' }}">
                                         <span
                                             class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Data
                                             Gejala</span>
@@ -77,17 +77,32 @@
                                 </li>
                                 <li class="mb-1 last:mb-0">
                                     <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
-                                        href="{{ '/penyakit' }}">
+                                        href="{{ '/admin/penyakit' }}">
                                         <span
                                             class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Data Penyakit</span>
                                     </a>
                                 </li>
                                 <li class="mb-1 last:mb-0">
                                     <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
-                                        href="">
+                                        href="{{ '/admin/rules' }}">
                                         <span
                                             class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Rules</span>
                                      </a>
+                                </li>
+                                <li class="mb-1 last:mb-0">
+                                    <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                                        href="{{ '/admin/pasien' }}">
+                                        <span
+                                            class="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200 cursor-pointer">Data Pasien</span>
+                                     </a>
+                                </li>
+                                <li class="mb-1 last:mb-0">
+                                    {{-- <form action="{{ route('actionLogout') }}" method="POST">
+                                        @csrf
+                                    <button class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate">
+                                        Logout
+                                     </button>
+                                    </form> --}}
                                 </li>
                             </ul>
                         </div>

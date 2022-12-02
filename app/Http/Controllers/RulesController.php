@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rules;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RulesController extends Controller
 {
@@ -14,7 +15,10 @@ class RulesController extends Controller
      */
     public function index()
     {
-        //
+        // $rules->solusi = json_decode($)
+        return view('admin.rules', [
+            'rules' => DB::table('rules')->paginate('20')
+        ]);
     }
 
     /**

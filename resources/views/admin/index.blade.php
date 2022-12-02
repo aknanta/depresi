@@ -20,31 +20,22 @@
                         <div class="text-center font-semibold">
                             <p class="pt-5">Data Pasien</p>
                         </div>
-                        <p class="p-3 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
-                            et
-                            consectetur, non asperiores rem soluta officiis aliquid rerum quisquam recusandae minima,
-                            libero nam
-                            alias est laborum, tempore voluptate. Blanditiis, est?</p>
+                        <p class="p-3 text-justify">{{ $dataPasien }}</p>
                     </div>
                     <div class="mt-5 h-52 max-w-screen-sm rounded shadow-xl bg-white">
                         <div class="text-center font-semibold">
                             <p class="pt-5">Data Gejala</p>
                         </div>
-                        <p class="p-3 text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
-                            et
-                            consectetur, non asperiores rem soluta officiis aliquid rerum quisquam recusandae minima,
-                            libero nam
-                            alias est laborum, tempore voluptate. Blanditiis, est?</p>
+                        <p class="p-3 text-justify">{{ $dataGejala }}</p>
                     </div>
                     <div class="mt-5 h-52 max-w-screen-sm rounded shadow-xl bg-white">
                         <div class="text-center font-semibold">
                             <p class="pt-5">Data Penyakit</p>
                         </div>
-                        <p class="p-3 text-justify">Lorem ipsum dolor sit amet co nsectetur, adipisicing elit.
-                            Temporibus et
-                            consectetur, non asperiores rem soluta officiis aliquid rerum quisquam recusandae minima,
-                            libero nam
-                            alias est laborum, tempore voluptate. Blanditiis, est?</p>
+                        <div class="flex">
+                            <p>aaa</p>
+                            <p class="p-3 text-justify">{{ $dataPenyakit }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
